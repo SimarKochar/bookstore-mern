@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { FaGoogle } from "react-icons/fa";
-import { useForm } from "react-hook-form"
+import { useForm } from "react-hook-form";
 
 
 const Login = () => {
     const [message, setMessage] = useState("")
-    const { loginUser, signInWithGoogle} = useAuth();
+    // const { loginUser, signInWithGoogle} = useAuth();
     const navigate = useNavigate()
     const {
         register,
@@ -15,26 +15,17 @@ const Login = () => {
         formState: { errors },
       } = useForm()
 
-      const onSubmit = async (data) => {
-        try {
-            await loginUser(data.email, data.password);
-            alert("Login successful!");
-            navigate("/")
-        } catch (error) {
-            setMessage("Please provide a valid email and password") 
-            console.error(error)
-        }
-      }
+      const onSubmit =  (data) => console.log(data)
 
       const handleGoogleSignIn = async () => {
-        try {
-            await signInWithGoogle();
-            alert("Login successful!");
-            navigate("/")
-        } catch (error) {
-            alert("Google sign in failed!") 
-            console.error(error)
-        }
+        // try {
+        //     await signInWithGoogle();
+        //     alert("Login successful!");
+        //     navigate("/")
+        // } catch (error) {
+        //     alert("Google sign in failed!") 
+        //     console.error(error)
+        // }
       }
   return (
     <div className='h-[calc(100vh-120px)] flex justify-center items-center '>

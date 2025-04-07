@@ -22,7 +22,7 @@ const Navbar = () => {
     const  [isDropdownOpen, setIsDropdownOpen] = useState(false)
     const cartItems = useSelector(state => state.cart.cartItems);
    
-    const CurrentUser = true;
+    const CurrentUser = false;
 
 
     const token = localStorage.getItem('token');
@@ -53,32 +53,44 @@ const Navbar = () => {
             <div>
               {CurrentUser ? (
                 <>
-                <button onClick={() => setIsDropdownOpen(!isDropdownOpen)} className="relative">
-                    <img src={avatarImg} alt="" className={`size-7 rounded-full ${
+                  <button
+                    onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                    className="relative"
+                  >
+                    <img
+                      src={avatarImg}
+                      alt=""
+                      className={`size-7 rounded-full ${
                         CurrentUser ? "border-2 border-primary" : ""
-                    }`} />
-                </button>
-                {/* show dropdown  */}
-                {
-                    isDropdownOpen && (
-                        <div className="absolute top-10 right-0 bg-white shadow-md p-4 rounded
-                        w-48 z-10">
-                            <ul>
-                                {
-                                    navigation.map((item) => (
-                                        <li key={item.name} onClick={() =>{
-                                            setIsDropdownOpen(false);
-                                        }} className="py-2">
-                                            <Link to={item.href} className="block text-gray-700 hover:text-primary">
-                                                {item.name}
-                                            </Link>
-                                        </li>
-                                    ))
-                                }
-                            </ul>
-                        </div>
-                    )
-                }
+                      }`}
+                    />
+                  </button>
+                  {/* show dropdown  */}
+                  {isDropdownOpen && (
+                    <div
+                      className="absolute top-10 right-0 bg-white shadow-md p-4 rounded
+                        w-48 z-10"
+                    >
+                      <ul>
+                        {navigation.map((item) => (
+                          <li
+                            key={item.name}
+                            onClick={() => {
+                              setIsDropdownOpen(false);
+                            }}
+                            className="py-2"
+                          >
+                            <Link
+                              to={item.href}
+                              className="block text-gray-700 hover:text-primary"
+                            >
+                              {item.name}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </>
               ) : (
                 <Link to="/login">
@@ -86,20 +98,20 @@ const Navbar = () => {
                 </Link>
               )}
             </div>
-            <HiOutlineUser className="size-6" />
             <button className="hidden sm:block relative">
               <HiOutlineHeart className="size-6" />
             </button>
 
             <Link
               to="/cart"
-              className="bg-primary p-1 sm:px-6 px-2 flex items-center rounded-md"
+              className="bg-primary p-1 sm:px-6 px-2 flex items-center rounded-md relative"
             >
-              <HiOutlineShoppingBag>
-                <span className="absolute top-0 right-0 bg-red-600 text-white py-1 px-2 rounded-full text-xs font-bold">
-                  0
+              <HiOutlineShoppingCart />
+              {cartItems.length > 0 && (
+                <span className="absolute top-0 right-0 text-white py-1 px-2 text-xs font-bold">
+                  {cartItems.length}
                 </span>
-              </HiOutlineShoppingBag>
+              )}
             </Link>
           </div>
         </nav>

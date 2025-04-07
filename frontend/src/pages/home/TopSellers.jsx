@@ -61,18 +61,17 @@ const TopSellers = () => {
           1180: {
             slidesPerView: 3,
             spaceBetween: 50,
-          }
+          },
         }}
         modules={[Pagination, Navigation]}
         className="mySwiper"
       >
-        {
-        filterBooks.length > 0 &&
-        filterBooks.map((book, index) => (
-          <SwiperSlide>
-            <BookCard key={index} book={book} />
-          </SwiperSlide>
-        ))}
+        {filterBooks.length > 0 &&
+          filterBooks.map((book, index) => (
+            <SwiperSlide key={index}>
+              <BookCard book={book} />
+            </SwiperSlide>
+          ))}
       </Swiper>
     </div>
   );
