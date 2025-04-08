@@ -6,6 +6,7 @@ import{Navigation, Pagination} from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import { useFetchAllBooksQuery } from '../../redux/features/cart/booksApi';
 
 
 const categories = ["Choose a genre", "Business", "Fiction", "Horror", "Adventure"];
@@ -14,6 +15,9 @@ const TopSellers = () => {
   
     const[books, setBooks] = useState([])
     const[selectesdCategory, setSelectedCategory] = useState("Choose a genre")
+    // const { data: response = {} } = useFetchAllBooksQuery();
+    // const books = response.book || [];
+
 
     useEffect(() => {
         fetch("books.json").then((res) => res.json())
