@@ -13,9 +13,13 @@ import BookCard from "../books/BookCard";
 import { useFetchAllBooksQuery } from "../../redux/features/books/booksApi";
 
 const Recommened = () => {
-  const [books, setBooks] = useState([]);
+  const [books, setBooks] = useState([]); //Remove this section
 
-  useEffect(() => {
+  //Add this section
+  // const { data: response = {} } = useFetchAllBooksQuery();
+    // const books = response.book || [];
+
+  useEffect(() => {     //Also remove this section
     fetch("books.json")
       .then((res) => res.json())
       .then((data) => setBooks(data));
