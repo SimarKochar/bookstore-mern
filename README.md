@@ -67,8 +67,8 @@ Follow the instructions below to set up and launch both the frontend and backend
 4. Paste the following environment variables into the `.env` file:
 
    ```env
-   DB_URL="mongodb+srv://helpyourassistant:pqam0Mwv3Vwv8Off@cluster0.qc3bq.mongodb.net/book-store?retryWrites=true&w=majority&appName=Cluster0"
-   JWT_SECRET_KEY="bc992a20cb6706f741433686be814e3df45e57ea1c2fc85f9dbb0ef7df12308a669bfa7c976368ff32e32f6541480ce9ec1b122242f9b1257ab669026aeaf16"
+   DB_URL=""
+   JWT_SECRET_KEY=""
    ```
 
    > ⚠️ **Note**: Ensure that MongoDB is correctly set up on your system or with MongoDB Atlas. It’s recommended to replace the default connection string and JWT secret with your own secure values.
