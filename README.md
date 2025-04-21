@@ -26,12 +26,12 @@ Follow the instructions below to set up and launch both the frontend and backend
 4. Add the following environment variables to configure your Firebase setup:
 
    ```env
-   VITE_API_KEY="AIzaSyCXvDIC4MPrkaMdeg_O2iij88wLpfj3qBA"
-   VITE_Auth_Domain="book-store-mern-app.firebaseapp.com"
-   VITE_PROJECT_ID="book-store-mern-app"
-   VITE_STORAGE_BUCKET="book-store-mern-app.appspot.com"
-   VITE_MESSAGING_SENDERID="205632822247"
-   VITE_APPID="1:205632822247:web:b0db0ec66bf6de0bbb3b42"
+   VITE_API_KEY=""
+   VITE_Auth_Domain=""
+   VITE_PROJECT_ID=""
+   VITE_STORAGE_BUCKET=""
+   VITE_MESSAGING_SENDERID=""
+   VITE_APPID=""
    ```
 
 5. Install the required frontend dependencies by running:
